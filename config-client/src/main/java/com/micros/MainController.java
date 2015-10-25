@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MainController {
-    @Value("${property.1}") String property1;
+    @Value("${property.1}")
+    String property1;
 
     @RequestMapping("/property1")
-    public String showLuckyWord() {
+    public String property1() {
         return "The property1 is: " + property1;
     }
 }
