@@ -1,0 +1,38 @@
+---
+spring:
+  profiles: subject
+  application:
+    name: discoverable-service-subject
+server:
+  port: ${PORT:${SERVER_PORT:0}}  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+words: I,You,He,She,It
+
+---
+spring:
+  profiles: noun
+  application:
+    name: discoverable-service-noun
+server:
+  port: ${PORT:${SERVER_PORT:0}}  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+words: boat,book,vote,seat,backpack,partition,groundhog
+
+---
+spring:
+  profiles: verb
+  application:
+    name: discoverable-service-verb
+server:
+  port: ${PORT:${SERVER_PORT:0}}  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+words: ran,knew,had,saw,bought
