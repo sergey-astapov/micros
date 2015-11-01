@@ -4,6 +4,10 @@ config-server
 
 ```
 mvn spring-boot:run
+Windows:
+java -cp config-server-0.0.1-SNAPSHOT.jar;lib/*;. com.micros.ConfigServerApplication
+Linux:
+java -cp config-server-0.0.1-SNAPSHOT.jar:lib/*:. com.micros.ConfigServerApplication
 ```
 
 discovery-server
