@@ -1,0 +1,13 @@
+---
+spring:
+  application:
+    name: discoverable-service
+  cloud:
+    config:
+      uri: http://localhost:8001
+      failFast: true
+# Allow Eureka to recognize two apps of the same type on the same host as separate instances:
+eureka:
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
