@@ -14,7 +14,7 @@ public class MainController {
     LoadBalancerClient client;
 
     @Autowired
-    VerbService verbService;
+    VerbIntegration verbIntegration;
 
     @RequestMapping("/sentence")
     public @ResponseBody String getSentence() {
@@ -27,7 +27,7 @@ public class MainController {
     public @ResponseBody String getSentenceFeign() {
         return getWord("discoverable-service-subject") + "." +
                 getWord("discoverable-service-noun") + "." +
-                verbService.getWord() + ".";
+                verbIntegration.getVerb() + ".";
     }
 
     public String getWord(String service) {
