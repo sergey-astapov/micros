@@ -13,11 +13,21 @@ public class MainController {
     @Autowired
     LoadBalancerClient client;
 
+    @Autowired
+    VerbService verbService;
+
     @RequestMapping("/sentence")
     public @ResponseBody String getSentence() {
         return getWord("discoverable-service-subject") + "." +
                 getWord("discoverable-service-noun") + "." +
                 getWord("discoverable-service-verb") + ".";
+    }
+
+    @RequestMapping("/sentence/feign")
+    public @ResponseBody String getSentenceFeign() {
+        return getWord("discoverable-service-subject") + "." +
+                getWord("discoverable-service-noun") + "." +
+                verbService.getWord() + ".";
     }
 
     public String getWord(String service) {
